@@ -13,6 +13,8 @@ spec:
       labels:
         app: web-demo
     spec:
+      imagePullSecrets:
+      - name: registry-secret
       containers:
       - name: web-demo
         image: hub.mooc.com/kubernetes/web:v1

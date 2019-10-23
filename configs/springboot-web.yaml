@@ -13,6 +13,8 @@ spec:
       labels:
         app: springboot-web-demo
     spec:
+      imagePullSecrets:
+      - name: registry-secret
       containers:
       - name: springboot-web-demo
         image: hub.mooc.com/kubernetes/springboot-web:v1

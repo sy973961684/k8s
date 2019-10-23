@@ -24,8 +24,13 @@ spec:
                 values:
                 - dubb-demo
             topologyKey: "kubernetes.io/hostname"
+      imagePullSecrets:
+      - name: registry-secret
       containers:
       - name: dubb-demo
         image: hub.mooc.com/kubernetes/dubbo:v1
         ports:
-        - containerPort: 20880
+        - containerPort: 20881
+        env:
+        - name: DUBBO_PORT
+          value: "20881"
